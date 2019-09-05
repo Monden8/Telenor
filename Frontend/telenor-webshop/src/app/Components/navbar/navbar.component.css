@@ -1,0 +1,12 @@
+.navbar {
+    display: flex;
+    background-color: blue;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    height: 10vh;
+}
+
+.logo {
+    height: 10vh;
+}
