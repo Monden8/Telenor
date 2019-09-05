@@ -2,16 +2,25 @@
     <mat-card>
         <mat-card-content>
             <h2 class="brand">Brand</h2>
-            <section class="brand-section" *ngFor="let brand of items | uniqueArray">
-                <mat-checkbox class="brand-margin" (change)="onChange(brand)">{{brand}} </mat-checkbox>
-            </section>
-            <h2 class="id">ID</h2>
-            <section class="ID-section" *ngFor="let item of items;let i = index ">
-                <mat-checkbox class="id-margin" (change)="onChange(item.id)">{{item.id}}</mat-checkbox>
+            <section *ngFor="let brand of brands">
+                <mat-checkbox (change)="onChange(brand)">{{brand}} </mat-checkbox>
             </section>
             <h2 class="colour">Colour</h2>
-            <section class="colour-section" *ngFor="let item of items;let i = index ">
-                <mat-checkbox class="colour-margin" (change)="onChange(item.colour)">{{item.colour}}</mat-checkbox>
+            <section *ngFor="let colour of colours">
+                <mat-checkbox (change)="onChange(colour)">{{colour}}</mat-checkbox>
+            </section>
+            <h2 class="platform">Operation System</h2>
+            <section *ngFor="let platform of platforms ">
+                <mat-checkbox (change)="onChange(platform)">{{platform}}</mat-checkbox>
+            </section>
+            <h2 class="capacity">Memory size</h2>
+            <section *ngFor="let capacity of capacities ">
+                <mat-checkbox (change)="onChange(capacity)">{{capacity}}</mat-checkbox>
+            </section>
+            <h2 class="sim">Sim slots </h2>
+            <section *ngFor="let sim of capacities ">
+                <mat-checkbox (change)="onChange(sim)">DualSim</mat-checkbox>
+                <mat-checkbox (change)="onChange(sim)">Single Sim</mat-checkbox>
             </section>
         </mat-card-content>
     </mat-card>

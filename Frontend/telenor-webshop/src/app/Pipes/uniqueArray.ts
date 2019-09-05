@@ -1,16 +1,12 @@
 import { Pipe, PipeTransform } from "@angular/core";
 
-@Pipe({ name: "uniqueArray" })
+@Pipe({ name: "uniqueBrand" })
 export class PipeService implements PipeTransform {
   transform(items: Array<any>): Array<any> {
-    let brand = [];
+    let menuItem = [];
     for (let i: number = 0; i < items.length; i++) {
-      brand.push(items[i].brand);
+      menuItem.push(items[i].brand);
     }
-    console.log(Object.values(items));
-    return [...new Set(brand)];
-    /*     return [...new Set(items.filter(item => item.brand === "Samsung"))];
-  
- */
+    return [...new Set(menuItem)];
   }
 }
