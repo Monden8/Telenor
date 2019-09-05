@@ -11,7 +11,7 @@ const eraseRefreshToken = result => new Promise((resolve, reject) => {
       } else {
         resolve(withouttoken);
       }
-    }
+    },
   );
 });
 

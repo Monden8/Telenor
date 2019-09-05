@@ -3,8 +3,6 @@ const { eraseRefreshToken } = require('../services/eraseRefreshToken');
 
 const userLogout = (req, res) => {
   const rt = req.headers["authorization"].slice(7);
-  console.log(rt);
-  
 
   findUserByToken(rt)
     .then(result => eraseRefreshToken(result))
