@@ -13,7 +13,6 @@ const findGivenItem = itemID => new Promise((resolve, reject) => {
 });
 
 const AddToCart = (itemToAdd, refreshToken) => new Promise((resolve, reject) => {
-  console.log(refreshToken)
   const decoded = jwt.decode(refreshToken);
 
 
