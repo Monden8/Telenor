@@ -82,6 +82,7 @@ import { CartDialogComponent } from './Components/cart-dialog/cart-dialog.compon
       useClass: AuthenticationInterceptor,
       multi: true
     },
+    PipeService
   ],
   
   bootstrap: [AppComponent],
