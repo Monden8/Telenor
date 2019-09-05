@@ -11,7 +11,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AuthService } from "./Services/auth.service";
-// import { AuthenticationInterceptor } from "./Au.interceptor";
+import { AuthenticationInterceptor } from "./Au.interceptor";
 import { AuthGuard } from './Guards/auth.guard';
 import { DialogComponent } from './Components/dialog/dialog.component';
 import { MatCardModule } from "@angular/material/card";
@@ -26,6 +26,8 @@ import {
   MatRippleModule,
   MatCheckboxModule
 } from "@angular/material";
+import { LoginDialogComponent } from './Components/login-dialog/login-dialog.component';
+import { CartDialogComponent } from './Components/cart-dialog/cart-dialog.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import {
     // SearchBarComponent,
     NavbarComponent,
     DialogComponent,
+    LoginDialogComponent,
+    CartDialogComponent,
   ],
 
   imports: [
@@ -65,18 +69,22 @@ import {
     MatInputModule,
     MatRippleModule,
     MatCheckboxModule,
-    MatSelectModule
+    MatSelectModule,
+    LoginDialogComponent,
+    CartDialogComponent
   ],
   providers: [
     AuthGuard,
     AuthService,
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: AuthenticationInterceptor,
-    //   multi: true
-    // },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthenticationInterceptor,
+      multi: true
+    },
   ],
   bootstrap: [AppComponent],
-  entryComponents: [DialogComponent]
+  entryComponents: [DialogComponent,
+    LoginDialogComponent,
+    CartDialogComponent]
 })
 export class AppModule { }
