@@ -5,7 +5,8 @@ const findAndDeleteFromCart = (singleCart, indexNumber) => new Promise((resolve,
   } else if (indexNumber < 0 || !indexNumber) {
     reject(new Error('No such item exsist.'));
   } else {
-    resolve(singleCart.cart.splice(indexNumber, 1));
+    //resolve(singleCart.cart.splice(indexNumber, 1));
+    resolve(oldCart)
   }
 });
 
