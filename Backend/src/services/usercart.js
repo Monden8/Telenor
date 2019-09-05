@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 const findCart = token => new Promise((resolve, reject) => {
   const decoded = jwt.decode(token);
 
-  User.find({ username: decoded.username }, '-_id cart', (err, data) => {
+  User.findOne({ username: decoded.username }, '-_id cart', (err, data) => {
     if (err) {
       reject(err);
     } else {
