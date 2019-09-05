@@ -18,12 +18,13 @@ export class NavbarComponent implements OnInit {
   constructor(private itemSvc: ItemService, private authsvc: AuthService, private dialog: MatDialog, ) { }
 
   ngOnInit() {
-    this.authsvc.obs.subscribe(res => {
-      this.username = res
-      if (this.username == '') {
-        this.username = jwt_decode(this.authsvc.getRefreshToken()).username
-      }
-    });
+    this.authsvc.obs.subscribe(
+      res => {
+        this.username = res
+      });
+    if (!this.isLoggedIn() && this.username == '') {
+    this.username = jwt_decode(this.authsvc.getRefreshToken()).username
+    }
   }
 
   isLoggedIn() {
