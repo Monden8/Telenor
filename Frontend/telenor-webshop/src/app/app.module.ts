@@ -18,6 +18,8 @@ import { MatDividerModule } from "@angular/material/divider";
 import { MatListModule } from "@angular/material/list";
 import { MatDialogModule } from "@angular/material/dialog";
 import { MatSelectModule } from "@angular/material/select";
+import { PipeService } from "./Pipes/uniqueArray";
+
 import {
   MatButtonModule,
   MatFormFieldModule,
@@ -25,6 +27,7 @@ import {
   MatRippleModule,
   MatCheckboxModule
 } from "@angular/material";
+import { SidebarComponent } from './Components/sidebar/sidebar.component';
 import { LoginDialogComponent } from './Components/login-dialog/login-dialog.component';
 import { CartDialogComponent } from './Components/cart-dialog/cart-dialog.component';
 
@@ -36,10 +39,11 @@ import { CartDialogComponent } from './Components/cart-dialog/cart-dialog.compon
     // SearchBarComponent,
     NavbarComponent,
     DialogComponent,
+    SidebarComponent,
+    PipeService,
     LoginDialogComponent,
     CartDialogComponent,
   ],
-
   imports: [
     MatInputModule,
     BrowserModule,
@@ -60,7 +64,6 @@ import { CartDialogComponent } from './Components/cart-dialog/cart-dialog.compon
     HttpClientModule,
     MatSelectModule
   ],
-
   exports: [
     MatButtonModule,
     MatFormFieldModule,
@@ -79,7 +82,9 @@ import { CartDialogComponent } from './Components/cart-dialog/cart-dialog.compon
       useClass: AuthenticationInterceptor,
       multi: true
     },
+    PipeService
   ],
+  
   bootstrap: [AppComponent],
   entryComponents: [DialogComponent,
     LoginDialogComponent,

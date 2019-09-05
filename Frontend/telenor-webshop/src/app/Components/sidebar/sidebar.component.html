@@ -1,0 +1,18 @@
+<div class="main">
+    <mat-card>
+        <mat-card-content>
+            <h2 class="brand">Brand</h2>
+            <section class="brand-section" *ngFor="let brand of items | uniqueArray">
+                <mat-checkbox class="brand-margin" (change)="onChange(brand)">{{brand}} </mat-checkbox>
+            </section>
+            <h2 class="id">ID</h2>
+            <section class="ID-section" *ngFor="let item of items;let i = index ">
+                <mat-checkbox class="id-margin" (change)="onChange(item.id)">{{item.id}}</mat-checkbox>
+            </section>
+            <h2 class="colour">Colour</h2>
+            <section class="colour-section" *ngFor="let item of items;let i = index ">
+                <mat-checkbox class="colour-margin" (change)="onChange(item.colour)">{{item.colour}}</mat-checkbox>
+            </section>
+        </mat-card-content>
+    </mat-card>
+</div>
