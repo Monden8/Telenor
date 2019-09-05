@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
-
-import { AppRoutingModule } from "./app-routing.module";
-import { AppComponent } from "./app.component";
-import { HomepageComponent } from "./Components/homepage/homepage.component";
-import { NavbarComponent } from "./Components/navbar/navbar.component";
-import { RegisterComponent } from "./Components/register/register.component";
-import { LoginComponent } from "./Components/login/login.component";
-import { DialogComponent } from "./Components/dialog/dialog.component";
-=======
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -38,7 +26,6 @@ import {
   MatRippleModule,
   MatCheckboxModule
 } from "@angular/material";
->>>>>>> frontend-dev
 
 @NgModule({
   declarations: [
@@ -50,11 +37,6 @@ import {
     NavbarComponent,
     DialogComponent,
   ],
-<<<<<<< HEAD
-  imports: [BrowserModule, AppRoutingModule],
-  providers: [],
-  bootstrap: [AppComponent]
-=======
 
   imports: [
     MatInputModule,
@@ -96,6 +78,5 @@ import {
   ],
   bootstrap: [AppComponent],
   entryComponents: [DialogComponent]
->>>>>>> frontend-dev
 })
 export class AppModule {}
