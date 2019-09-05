@@ -21,7 +21,7 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  register(user: { username: string, password: string, email: string, money: number }): Observable<boolean> {
+  register(user: { username: string, password: string, email: string }): Observable<boolean> {
     let headers: HttpHeaders = new HttpHeaders();
     headers = headers.append('Content-Type', 'application/json');
     return this.http.post<any>(`${environment.apiUrl}/register`, user, { headers })
@@ -54,8 +54,8 @@ export class AuthService {
   logout(): Observable<boolean> {
     let headers: HttpHeaders = new HttpHeaders();
     headers = headers.append('Content-Type', 'application/json');
-    headers = headers.append('Authorization', `Bearer ${this.getJwtToken()}`);
-    return this.http.post<any>(`${environment.apiUrl}/logout`, { 'rt': this.getRefreshToken() }, { headers })
+    headers = headers.append('Authorization', `Bearer ${this.getRefreshToken()}`);
+    return this.http.post<any>(`${environment.apiUrl}/logout`, {}, { headers })
       .pipe(
         tap(() => this.doLogoutUser()),
         mapTo(true),
