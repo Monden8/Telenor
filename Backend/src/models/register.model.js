@@ -3,6 +3,8 @@ const uniqueValidator = require('mongoose-unique-validator');
 
 mongoose.set('useFindAndModify', false);
 
+const items = require('./items.model').schema;
+
 const User = mongoose.Schema({
   username: {
     type: String,
@@ -21,6 +23,7 @@ const User = mongoose.Schema({
     type: String,
     required: false,
   },
+  cart: [items],
 });
 
 User.plugin(uniqueValidator, { message: 'Username is already taken.' });
