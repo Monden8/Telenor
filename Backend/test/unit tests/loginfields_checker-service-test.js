@@ -1,4 +1,4 @@
-const { checkFormFields } = require('../src/services/loginfields_checker');
+const { checkFormFields } = require('../../src/services/loginfields_checker');
 const chai = require('chai');
 const chaiAsPromised = require('chai-as-promised');
 
