@@ -1,13 +1,12 @@
-
-
-function findAndDeleteFromCart(cartp, phoneid) {
-  // eslint-disable-next-line no-plusplus
-  for (let i = 0; i < cartp.length; i++) {
-    if (cartp[i]._id == phoneid) {
-      return { index: i, list: cartp };
-    }
+const findAndDeleteFromCart = (cart, indexNumber) => new Promise((resolve, reject) => {
+  if (indexNumber !== 0) {
+    resolve(cart.splice(indexNumber - 1, 1));
+  } else if (indexNumber < 0 || !indexNumber) {
+    reject(new Error('No such item exsist.'));
+  } else {
+    resolve(cart.splice(indexNumber, 1));
   }
-  return null;
-}
+});
+
 
 module.exports = { findAndDeleteFromCart };

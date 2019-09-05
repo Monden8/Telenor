@@ -16,7 +16,7 @@ router.post('/logout', userLogout);
 router.get('/main', getItems);
 router.get('/cart', getCart);
 router.get('/main/:id', phoneDetails);
-router.post('/deletefromcart', deleteFromCart);
+router.delete('/deletefromcart', deleteFromCart);
 
 
 module.exports = router;

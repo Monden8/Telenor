@@ -1,12 +1,13 @@
-const User = require('../models/register.model');
+const findCart = (cart, indexNumber) => new Promise((resolve, reject) => {
+  if (indexNumber !== 0) {
+    resolve(cart.splice(indexNumber - 1, 1));
+  } else if (indexNumber < 0 || !indexNumber) {
+    reject(new Error('No such item exsist.'));
+  } else {
+    resolve(cart.splice(indexNumber, 1));
+  }
+});
 
 
-function spliceCart(indexPlusList) {
-  const whereto = indexPlusList.index;  
-  const cart = indexPlusList.list;
+module.exports = { findCart };
 
-  cart.splice(whereto, 1);
-  return cart;
-}
-
-module.exports = { spliceCart };
