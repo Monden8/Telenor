@@ -1,4 +1,4 @@
-const { findUserByToken } = require('../services/findUserByToken-service');
+const { findUserByToken } = require('../services/findUserbyToken-service');
 const { eraseRefreshToken } = require('../services/eraseRefreshToken');
 
 const userLogout = (req, res) => {
