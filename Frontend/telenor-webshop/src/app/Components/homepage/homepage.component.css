@@ -1,11 +1,14 @@
 .main-container {
     display: flex;
+    margin-left: 20vw;
+    margin-top: 10vw;
     background-color: rgb(223, 230, 238);
-    padding: 20px;
     border-radius: 2px;
 }
 
 .items {
+    display: flex;
+    align-content: flex-start;
     margin: 12px;
     padding: 12px;
     background-color: white;

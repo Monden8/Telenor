@@ -26,7 +26,7 @@ import {
   MatRippleModule,
   MatCheckboxModule
 } from "@angular/material";
-
+import { SidebarComponent } from './Components/sidebar/sidebar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,8 +36,8 @@ import {
     // SearchBarComponent,
     NavbarComponent,
     DialogComponent,
+    SidebarComponent,
   ],
-
   imports: [
     MatInputModule,
     BrowserModule,
@@ -58,7 +58,6 @@ import {
     HttpClientModule,
     MatSelectModule
   ],
-
   exports: [
     MatButtonModule,
     MatFormFieldModule,
@@ -79,4 +78,4 @@ import {
   bootstrap: [AppComponent],
   entryComponents: [DialogComponent]
 })
-export class AppModule {}
+export class AppModule { }
