@@ -1,56 +1,57 @@
-const mongoose = require("mongoose");
-mongoose.set("useFindAndModify", false);
+const mongoose = require('mongoose');
+
+mongoose.set('useFindAndModify', false);
 
 const Items = mongoose.Schema({
   brand: {
     type: String,
-    required: true
+    required: true,
   },
   type: {
     type: String,
-    required: true
+    required: true,
   },
   serie: {
     type: String,
-    required: true
+    required: true,
   },
   colour: {
     type: String,
-    required: true
+    required: true,
   },
   opsystem: {
     type: String,
-    required: true
+    required: true,
   },
   dualsim: {
     type: Boolean,
-    required: true
+    required: true,
   },
   simplesim: {
     type: Boolean,
-    required: true
+    required: true,
   },
   memory: {
     type: String,
     required: true,
-    default: new Date()
+    default: new Date(),
   },
   details: {
     type: String,
-    required: true
+    required: true,
   },
   price: {
     type: Number,
-    required: true
+    required: true,
   },
   quantity: {
     type: Number,
-    required: true
+    required: true,
   },
   img: {
     type: String,
-    required: true
+    required: true,
   },
 });
 
-module.exports = mongoose.model("Items", Items, "webshopItems");
+module.exports = mongoose.model('Items', Items, 'webshopItems');
