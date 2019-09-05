@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const uniqueValidator = require("mongoose-unique-validator");
+const items = require('./items.model').schema;
 mongoose.set("useFindAndModify", false);
 
 const User = mongoose.Schema({
@@ -19,8 +20,9 @@ const User = mongoose.Schema({
   refreshToken: {
     type: String,
     required: false
-  }
-  //whishlist
+  },
+  cart: [items],
+
 });
 
 User.plugin(uniqueValidator, { message: "Username is already taken." });
