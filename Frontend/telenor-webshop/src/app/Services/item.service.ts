@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { tap, mapTo, catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
 // import { tap, catchError, mapTo } from 'rxjs/operators';
 // import { of } from 'rxjs';
 
@@ -19,16 +21,15 @@ export class ItemService {
     return this.http.get<any>(`${environment.apiUrl}/main`, { headers: this.headers })
   }
 
-  // bid(data: { _id: any, price: number, rt: string }): any {
-  //   return this.http.post<any>(`${environment.apiUrl}/buyitem`, data, { headers: this.headers }).pipe(
-  //     tap(res => {
-  //     }),
-  //     mapTo(true),
-  //     catchError(error => {
-  //       return of(false);
-  //     }));
-  // }
-
+  addItem(id: string) {
+    return this.http.put<any>(`${environment.apiUrl}/addtocart`, id, { headers: this.headers }).pipe(
+      tap(res => {
+      }),
+      mapTo(true),
+      catchError(error => {
+        return of(false);
+      }));
+  }
   getMyCart(): any {
     return this.http.get<any>(`${environment.apiUrl}/cart`, { headers: this.headers })
   }

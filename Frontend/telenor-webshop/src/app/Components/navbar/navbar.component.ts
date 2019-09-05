@@ -5,7 +5,7 @@ import { DialogComponent } from '../dialog/dialog.component';
 import { CartDialogComponent } from '../cart-dialog/cart-dialog.component';
 import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
 import { ItemService } from 'src/app/Services/item.service';
-// import * as jwt_decode from "jwt-decode";
+import * as jwt_decode from "jwt-decode";
 
 @Component({
   selector: 'app-navbar',
@@ -13,13 +13,16 @@ import { ItemService } from 'src/app/Services/item.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-username:string;
+  username: string;
 
   constructor(private itemSvc: ItemService, private authsvc: AuthService, private dialog: MatDialog, ) { }
 
   ngOnInit() {
-    this.authsvc.obs.subscribe(res =>{
-      this.username=res
+    this.authsvc.obs.subscribe(res => {
+      this.username = res
+      if (this.username == '') {
+        this.username = jwt_decode(this.authsvc.getRefreshToken()).username
+      }
     });
   }
 

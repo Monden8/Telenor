@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from "@angular/core";
-import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
+import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from "@angular/material/dialog";
+import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
 
 @Component({
   selector: "app-dialog",
@@ -8,20 +9,24 @@ import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 })
 export class DialogComponent implements OnInit {
   errormsg: string;
-  statuscode: number;
+  next: string;
   constructor(
     @Inject(MAT_DIALOG_DATA) data,
-    public dialogRef: MatDialogRef<DialogComponent>
+    public dialogRef: MatDialogRef<DialogComponent>,
+    private dialog: MatDialog
   ) {
     dialogRef.disableClose = true;
 
     this.errormsg = data.message;
-    this.statuscode = 400;
+    this.next = data.next;
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   close() {
+    if (this.next == "open") {
+      this.dialog.open(LoginDialogComponent, {})
+    }
     this.dialogRef.close();
   }
 }
