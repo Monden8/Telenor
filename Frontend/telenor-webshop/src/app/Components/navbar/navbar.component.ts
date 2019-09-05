@@ -5,8 +5,7 @@ import { DialogComponent } from '../dialog/dialog.component';
 import { CartDialogComponent } from '../cart-dialog/cart-dialog.component';
 import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
 import { ItemService } from 'src/app/Services/item.service';
-import * as jwt_decode from "jwt-decode";
-import { BehaviorSubject } from 'rxjs';
+// import * as jwt_decode from "jwt-decode";
 
 @Component({
   selector: 'app-navbar',
@@ -15,13 +14,13 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class NavbarComponent implements OnInit {
 username:string;
-jwtToken:string;
 
   constructor(private itemSvc: ItemService, private authsvc: AuthService, private dialog: MatDialog, ) { }
 
   ngOnInit() {
-    this.jwtToken=this.authsvc.getJwtToken();
-    this.username=jwt_decode(this.jwtToken).username;
+    this.authsvc.obs.subscribe(res =>{
+      this.username=res
+    });
   }
 
   isLoggedIn() {
