@@ -5,35 +5,26 @@
     routerLink="/"
   />
 
-  <!-- <div *ngIf="!isLoggedIn()">
+  <div *ngIf="!isLoggedIn()">
     <h2 class="username">Welcome {{ username }}</h2>
-  </div> -->
-
-  <!-- <div class="yourstuff" *ngIf="!isLoggedIn()">
-      <button mat-raised-button routerLink="/submit">
-        Upload Item
-      </button>
-      <button mat-raised-button (click)="func('cart')">
-        Your Cart
-      </button>
-      <button mat-raised-button (click)="func('item')">
-        Your Items
-      </button>
-    </div> -->
-  <div>
-    <button mat-raised-button *ngIf="isLoggedIn()" routerLink="/login">
-      Login
-    </button>
-    <!-- <button mat-raised-button *ngIf="isLoggedIn()" routerLink="/register">
-      Register
-    </button> -->
   </div>
-  <!-- <button
+
+  <div class="yourstuff" *ngIf="isLoggedIn()">
+    <button mat-raised-button (click)="openCart()">
+      <img src="" alt="" />
+    </button>
+  </div>
+  <div>
+    <button mat-raised-button *ngIf="isLoggedIn()" (click)="openLogin()">
+      Login drop
+    </button>
+  </div>
+  <button
     mat-raised-button
     *ngIf="!isLoggedIn()"
     (click)="logout()"
     routerLink="/"
   >
     Logout
-  </button> -->
+  </button>
 </div>
