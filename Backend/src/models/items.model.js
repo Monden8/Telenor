@@ -27,10 +27,6 @@ const Items = mongoose.Schema({
     type: Boolean,
     required: true,
   },
-  simplesim: {
-    type: Boolean,
-    required: true,
-  },
   memory: {
     type: String,
     required: true,
