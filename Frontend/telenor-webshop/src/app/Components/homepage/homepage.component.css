@@ -20,9 +20,6 @@ example-card {
     background-position: center center;
     background-repeat: no-repeat;
   }
-  .example-header-image {
-    background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
-  }
   .mainmoin {
     display: flex;
     justify-content: center;
