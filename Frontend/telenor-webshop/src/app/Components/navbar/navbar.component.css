@@ -1,6 +1,5 @@
 .mainy {
     z-index: 1;
-    top: 0;
     position: fixed;
     margin: 0px;
     padding: 0px;
@@ -10,9 +9,8 @@
     align-items: center;
     justify-content: flex-end;
     background-color: blue;
-}
-
-img {
+  }
+  img {
     border: 0px;
     text-decoration: none;
     width: 8vh;
@@ -22,13 +20,12 @@ img {
     left: 10px;
     padding: 10px 0px 0px 10px;
     outline: none;
-}
-
-button {
+  }
+  button {
     top: -6px;
     margin-left: 20px;
     margin-right: 20px;
     background-color: white;
     color: blue;
     font-size: 1.4rem;
-}
+  }
