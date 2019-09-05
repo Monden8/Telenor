@@ -1,0 +1,12 @@
+.main-container {
+    display: flex;
+    background-color: rgb(223, 230, 238);
+    padding: 20px;
+    border-radius: 2px;
+}
+
+.items {
+    margin: 12px;
+    padding: 12px;
+    background-color: white;
+}
