@@ -8,21 +8,16 @@ import { Component, OnInit } from "@angular/core";
 export class SidebarComponent implements OnInit {
   items = [
     { brand: "Samsung", id: 1, colour: "black" },
-    { brand: "Apple", id: 2, colour: "white", isChecked: false },
-    { brand: "LG", id: 3, colour: "black", isChecked: false  },
-    { brand: "Samsung", id: 54, colour: "black" },
-
+    { brand: "Apple", id: 2, colour: "white" },
+    { brand: "LG", id: 3, colour: "black" },
+    { brand: "Samsung", id: 54, colour: "black" }
   ];
   isChecked = false;
   constructor() {}
- 
-   ngOnInit() {
-    this.items.forEach(item => {
-      item.isChecked = false; 
-   });
-  }
+
+  ngOnInit() {}
 
   onChange(event) {
-    console.log(event)
+    console.log(event);
   }
 }
