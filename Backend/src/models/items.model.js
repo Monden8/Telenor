@@ -34,7 +34,6 @@ const Items = mongoose.Schema({
   memory: {
     type: String,
     required: true,
-    default: new Date(),
   },
   details: {
     type: String,
