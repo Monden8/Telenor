@@ -1,12 +1,11 @@
 const findAndDeleteFromCart = (singleCart, indexNumber) => new Promise((resolve, reject) => {
-  const oldCart = singleCart.cart
-  if (indexNumber !== 0) {
-    resolve(singleCart.cart.splice(indexNumber - 1, 1));
-  } else if (indexNumber < 0 || !indexNumber) {
+  console.log(indexNumber);
+  const oldCart = singleCart.cart;
+  if (indexNumber < 0) {
     reject(new Error('No such item exsist.'));
   } else {
-    //resolve(singleCart.cart.splice(indexNumber, 1));
-    resolve(oldCart)
+    oldCart.splice(indexNumber, 1);
+    resolve(oldCart);
   }
 });
 

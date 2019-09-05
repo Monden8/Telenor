@@ -1,13 +1,19 @@
-const findCart = (cart, indexNumber) => new Promise((resolve, reject) => {
-  if (indexNumber !== 0) {
-    resolve(cart.splice(indexNumber - 1, 1));
-  } else if (indexNumber < 0 || !indexNumber) {
-    reject(new Error('No such item exsist.'));
-  } else {
-    resolve(cart.splice(indexNumber, 1));
-  }
+const User = require('../models/register.model');
+const jwt = require('jsonwebtoken');
+
+const updateCart = (cart, refreshToken ) => new Promise((resolve, reject) => {
+  const decoded = jwt.decode(refreshToken);
+  User.findOneAndUpdate({ username: decoded.username },
+    { $set: { cart } },
+    { new: true },
+    (err, data) => {
+      if (err || data <= 0) {
+        reject(err);
+      } else {
+        resolve(data);
+      }
+    });
 });
 
-
-module.exports = { findCart };
+module.exports = { updateCart };
 
