@@ -20,6 +20,11 @@ export class HomepageComponent implements OnInit {
     id: "43312",
     name: " galaxy J",
     brand: "Samsung"
+  },
+  {
+    id: "479312",
+    name: " iPhone 6s",
+    brand: "Apple"
   }
 ];
   constructor() { }

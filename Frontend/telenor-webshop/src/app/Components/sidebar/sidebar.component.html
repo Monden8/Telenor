@@ -2,8 +2,18 @@
     <mat-card>
         <mat-card-content>
             <h2 class="brand">Brand</h2>
-            <section class="brand-section">
-                <mat-checkbox class="brand-margin" [(ngModel)]="checked">Checked</mat-checkbox>
+            <div *ngFor="let item of items ; let i = index ">
+                <section class="brand-section">
+                    <mat-checkbox class="brand-margin" (change)="onChange(item.brand)">{{item.brand}} </mat-checkbox>
+                </section>
+            </div>
+            <h2 class="id">ID</h2>
+            <section class="ID-section" *ngFor="let item of items;let i = index ">
+                <mat-checkbox class="id-margin" (change)="onChange(item.id)">{{item.id}}</mat-checkbox>
+            </section>
+            <h2 class="colour">Colour</h2>
+            <section class="colour-section" *ngFor="let item of items;let i = index ">
+                <mat-checkbox class="colour-margin" (change)="onChange(item.colour)">{{item.colour}}</mat-checkbox>
             </section>
         </mat-card-content>
     </mat-card>

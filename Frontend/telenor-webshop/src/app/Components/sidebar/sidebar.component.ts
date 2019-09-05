@@ -1,15 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-sidebar',
-  templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css']
+  selector: "app-sidebar",
+  templateUrl: "./sidebar.component.html",
+  styleUrls: ["./sidebar.component.css"]
 })
 export class SidebarComponent implements OnInit {
+  items = [
+    { brand: "Samsung", id: 1, colour: "black" },
+    { brand: "Apple", id: 2, colour: "white", isChecked: false },
+    { brand: "LG", id: 3, colour: "black", isChecked: false  },
+    { brand: "Samsung", id: 54, colour: "black" },
 
-  constructor() { }
-
-  ngOnInit() {
+  ];
+  isChecked = false;
+  constructor() {}
+ 
+   ngOnInit() {
+    this.items.forEach(item => {
+      item.isChecked = false; 
+   });
   }
 
+  onChange(event) {
+    console.log(event)
+  }
 }

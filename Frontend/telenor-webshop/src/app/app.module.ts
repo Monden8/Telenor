@@ -19,6 +19,8 @@ import { MatDividerModule } from "@angular/material/divider";
 import { MatListModule } from "@angular/material/list";
 import { MatDialogModule } from "@angular/material/dialog";
 import { MatSelectModule } from "@angular/material/select";
+import { PipeService } from "./Pipes/uniqueArray";
+
 import {
   MatButtonModule,
   MatFormFieldModule,
@@ -37,6 +39,7 @@ import { SidebarComponent } from './Components/sidebar/sidebar.component';
     NavbarComponent,
     DialogComponent,
     SidebarComponent,
+    PipeService
   ],
   imports: [
     MatInputModule,
@@ -74,7 +77,9 @@ import { SidebarComponent } from './Components/sidebar/sidebar.component';
     //   useClass: AuthenticationInterceptor,
     //   multi: true
     // },
+    
   ],
+  
   bootstrap: [AppComponent],
   entryComponents: [DialogComponent]
 })
