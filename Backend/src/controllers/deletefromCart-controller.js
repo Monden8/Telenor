@@ -12,7 +12,7 @@ const deleteFromCart = (req, res) => {
   findCart(rt)
     .then(cart => findAndDeleteFromCart(cart, phoneIndex))
     //.then(indexPlusList => spliceCart(indexPlusList))
-    .then(newcart => updateCart(rt, newcart))
+    //.then(newcart => updateCart(rt, newcart))
     .then((data) => { res.status(200).json(data); })
     .catch((err) => {
       res.status(400).json({ status: 'error', message: err.message });
