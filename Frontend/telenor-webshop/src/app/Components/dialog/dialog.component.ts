@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from "@angular/core";
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from "@angular/material/dialog";
-import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
+// import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
 
 @Component({
   selector: "app-dialog",
@@ -13,7 +13,7 @@ export class DialogComponent implements OnInit {
   constructor(
     @Inject(MAT_DIALOG_DATA) data,
     public dialogRef: MatDialogRef<DialogComponent>,
-    private dialog: MatDialog
+    // private dialog: MatDialog
   ) {
     dialogRef.disableClose = true;
 
@@ -24,9 +24,9 @@ export class DialogComponent implements OnInit {
   ngOnInit() { }
 
   close() {
-    if (this.next == "open") {
-      this.dialog.open(LoginDialogComponent, {})
-    }
+    // if (this.next == "open") {
+    //   this.dialog.open(LoginDialogComponent, {})
+    // }
     this.dialogRef.close();
   }
 }
