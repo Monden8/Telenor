@@ -40,6 +40,7 @@ export class LoginDialogComponent implements OnInit {
           })
         } else {
           this.close()
+          this.router.navigate(['']);
         }
       })
   }

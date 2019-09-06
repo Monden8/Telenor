@@ -3,3 +3,9 @@
   margin: 0;
   padding: 0;
 }
+html,
+body {
+  background-image: url("./assets/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}

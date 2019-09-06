@@ -19,6 +19,7 @@ import { MatListModule } from "@angular/material/list";
 import { MatDialogModule } from "@angular/material/dialog";
 import { MatSelectModule } from "@angular/material/select";
 import { PipeService } from "./Pipes/uniqueArray";
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import {
   MatButtonModule,
@@ -45,6 +46,7 @@ import { CartDialogComponent } from './Components/cart-dialog/cart-dialog.compon
     CartDialogComponent,
   ],
   imports: [
+    NgxPaginationModule,
     MatInputModule,
     BrowserModule,
     HttpClientModule,
@@ -84,7 +86,7 @@ import { CartDialogComponent } from './Components/cart-dialog/cart-dialog.compon
     },
     PipeService
   ],
-  
+
   bootstrap: [AppComponent],
   entryComponents: [DialogComponent,
     LoginDialogComponent,

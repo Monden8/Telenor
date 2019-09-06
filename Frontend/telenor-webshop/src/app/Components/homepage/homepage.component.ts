@@ -10,7 +10,8 @@ import { DialogComponent } from '../dialog/dialog.component';
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements OnInit {
-  items: Array<any>;
+  p: number = 1;
+  collection: Array<any>;
 
   constructor(private authsvc: AuthService, private item: ItemService, private dialog: MatDialog) { }
 
@@ -19,8 +20,12 @@ export class HomepageComponent implements OnInit {
   }
   getAllItems() {
     this.item.getItems().subscribe(res => {
+<<<<<<< HEAD
       this.items = res
       console.log(this.items)
+=======
+      this.collection = res
+>>>>>>> frontend-dev
     })
   }
   addToCart(id) {
