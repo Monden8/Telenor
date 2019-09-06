@@ -15,11 +15,12 @@ export class HomepageComponent implements OnInit {
   constructor(private authsvc: AuthService, private item: ItemService, private dialog: MatDialog) { }
 
   ngOnInit() {
-    this.getAllItems()
+    this.getAllItems();
   }
   getAllItems() {
     this.item.getItems().subscribe(res => {
       this.items = res
+      console.log(this.items)
     })
   }
   addToCart(id) {

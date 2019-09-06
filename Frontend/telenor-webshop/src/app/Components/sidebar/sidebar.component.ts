@@ -12,9 +12,9 @@ export class SidebarComponent implements OnInit {
   public colours: string[] = [];
   public platforms: string[] = [];
   public capacities: string[] = [];
-  public dualSim: boolean;
-  public singleSim: boolean;
-
+  public dualSim: boolean = false;
+  public singleSim: boolean = false;
+  public arguments:any = [];
 
   constructor(private item: ItemService) {}
 
@@ -39,6 +39,18 @@ export class SidebarComponent implements OnInit {
   }
 
   onChange(event) {
-    console.log(event);
+    let isContains = false;
+    for (let i: number = 0; i < this.items.length; i++) {
+      if (this.arguments[i] === event) {
+        isContains = true;
+      }
+    }
+    if (isContains === false) {
+      this.arguments.push(event);
+      isContains = true;
+    } else {
+      this.arguments.splice(this.arguments.indexOf(event), 1);
+    }
+    this.item.getArguments(this.arguments);
   }
 }

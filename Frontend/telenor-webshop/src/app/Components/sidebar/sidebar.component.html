@@ -18,9 +18,9 @@
                 <mat-checkbox (change)="onChange(capacity)">{{capacity}}</mat-checkbox>
             </section>
             <h2 class="sim">Sim slots </h2>
-            <section *ngFor="let sim of capacities ">
-                <mat-checkbox (change)="onChange(sim)">DualSim</mat-checkbox>
-                <mat-checkbox (change)="onChange(sim)">Single Sim</mat-checkbox>
+            <section>
+                <mat-checkbox (change)="onChange(true)">DualSim</mat-checkbox>
+                <mat-checkbox (change)="onChange(true)">Single Sim</mat-checkbox>
             </section>
         </mat-card-content>
     </mat-card>
