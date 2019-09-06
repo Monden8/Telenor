@@ -19,15 +19,11 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit() {
     this.getAllItems();
+    this.getFilter();
   }
   getAllItems() {
     this.item.getItems().subscribe(res => {
-<<<<<<< HEAD
-      this.items = res
-      console.log(this.items)
-=======
       this.collection = res
->>>>>>> frontend-dev
     })
   }
   addToCart(id) {
@@ -41,5 +37,10 @@ export class HomepageComponent implements OnInit {
   }
   isLoggedIn() {
     return !this.authsvc.isLoggedIn();
+  }
+
+  getFilter(){
+    this.item.obs.subscribe(res => console.log(res));
+    this.item.getArguments().subscribe(res=>{console.log(res)})
   }
 }

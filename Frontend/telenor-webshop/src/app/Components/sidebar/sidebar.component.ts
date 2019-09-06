@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, EventEmitter, Output } from "@angular/core";
 import { ItemService } from "src/app/Services/item.service";
 
 @Component({
@@ -14,7 +14,8 @@ export class SidebarComponent implements OnInit {
   public capacities: string[] = [];
   public dualSim: boolean = false;
   public singleSim: boolean = false;
-  public arguments:any = [];
+  arguments: string[]=[];
+  
 
   constructor(private item: ItemService) {}
 

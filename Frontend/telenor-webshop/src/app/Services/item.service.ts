@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { environment } from "src/environments/environment";
 import { tap, mapTo, catchError } from "rxjs/operators";
-import { of, Observable } from "rxjs";
+import { of, Observable, BehaviorSubject } from "rxjs";
 // import { tap, catchError, mapTo } from 'rxjs/operators';
 // import { of } from 'rxjs';
 
@@ -11,6 +11,8 @@ import { of, Observable } from "rxjs";
 })
 export class ItemService {
   headers: HttpHeaders = new HttpHeaders();
+  arguments: BehaviorSubject<any> = new BehaviorSubject("");
+  obs = this.arguments.asObservable();
 
   constructor(private http: HttpClient) {
     this.headers = this.headers.append("Content-Type", "application/json");
@@ -40,7 +42,8 @@ export class ItemService {
       headers: this.headers
     });
   }
-  getArguments(data):Observable<any> {
-    return data.asObservable();
+  getArguments(data?): Observable<any> {
+    let arg = data
+    return arg.asObservable()
   }
 }
