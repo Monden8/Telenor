@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/Services/auth.service';
 import { ItemService } from 'src/app/Services/item.service';
 import { MatDialog } from '@angular/material';
-import { DialogComponent } from '../dialog/dialog.component';
+import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
+// import { DialogComponent } from '../dialog/dialog.component';
+
 
 @Component({
   selector: 'app-homepage',
@@ -30,7 +32,8 @@ export class HomepageComponent implements OnInit {
   }
   addToCart(id) {
     if (this.isLoggedIn()) {
-      this.dialog.open(DialogComponent, { data: { message: "Please login first !", next: "open" } })
+      this.dialog.open(LoginDialogComponent, {});
+      //   // this.dialog.open(DialogComponent, { data: { message: "Please login first !", next: "open" } })
     } else {
       this.item.addItem(id).subscribe(res => {
       })

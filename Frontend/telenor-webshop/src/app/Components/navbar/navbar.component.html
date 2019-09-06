@@ -1,28 +1,39 @@
-<div class="mainy">
-  <img class="oneImg" src="../../../assets/logo.png" alt="" routerLink="/" />
-  <div class="controlBar">
-    <div>
-      <button class="loggedInPic" *ngIf="isLoggedIn()" (click)="openLogin()">
-        <img src="../../../assets/customer_ico.png" alt="" />
-      </button>
+<body>
+  <div class="mainy">
+    <img class="oneImg" src="../../../assets/logo.png" alt="" routerLink="/" />
+    <div class="controlBar">
+      <div>
+        <button class="loggedInPic" *ngIf="isLoggedIn()" (click)="openLogin()">
+          <img src="../../../assets/customer_ico.png" alt="" />
+        </button>
+      </div>
+      <div class="usernamePic" *ngIf="!isLoggedIn()">
+        <img src="../../../assets/heart.png" alt="" />
+        <!-- <h2 class="username">Welcome{{ username }}</h2> -->
+      </div>
+      ​
+      <div>
+        <button
+          class="loggedOutPic"
+          *ngIf="!isLoggedIn()"
+          (click)="logout()"
+          routerLink="/"
+        >
+          <img src="../../../assets/customerin_ico.png" alt="" />
+        </button>
+      </div>
+      ​
+      <div class="yourstuff" *ngIf="isLoggedIn()">
+        <button class="yourstuffPic" (click)="openCart()">
+          <img src="../../../assets/bag_ico.png" alt="" />
+        </button>
+      </div>
+      <div class="yourstuff" *ngIf="!isLoggedIn()">
+        <button class="yourstuffPic" (click)="openCart()">
+          <img src="../../../assets/fullbag_ico.png" alt="" />
+        </button>
+      </div>
+      ​
     </div>
-    ​
-    <div>
-      <button
-        class="loggedOutPic"
-        *ngIf="!isLoggedIn()"
-        (click)="logout()"
-        routerLink="/"
-      ></button>
-    </div>
-    ​
-    <div class="yourstuff" *ngIf="!isLoggedIn()">
-      <button class="yourstuffPic" (click)="openCart()"></button>
-    </div>
-    ​
-    <div class="usernamePic" *ngIf="!isLoggedIn()">
-      <h2 class="username">Welcome{{ username }}</h2>
-    </div>
-    ​
   </div>
-</div>
+</body>

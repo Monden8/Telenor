@@ -23,7 +23,7 @@ export class NavbarComponent implements OnInit {
         this.username = res
       });
     if (!this.isLoggedIn() && this.username == '') {
-    this.username = jwt_decode(this.authsvc.getRefreshToken()).username
+      this.username = jwt_decode(this.authsvc.getRefreshToken()).username
     }
   }
 
@@ -37,16 +37,20 @@ export class NavbarComponent implements OnInit {
     this.dialog.open(LoginDialogComponent, {})
   }
   openCart() {
-    this.itemSvc.getMyCart().subscribe(res => {
-      if (res.length < 1) {
-        this.dialog.open(DialogComponent, {
-          data: { message: 'Your cart is empty!' }
-        })
-      } else {
-        this.dialog.open(CartDialogComponent, {
-          data: res
-        })
-      }
-    })
+    if (this.isLoggedIn()) {
+      this.openLogin()
+    } else {
+      this.itemSvc.getMyCart().subscribe(res => {
+        if (res.length < 1) {
+          this.dialog.open(DialogComponent, {
+            data: { message: 'Your cart is empty!' }
+          })
+        } else {
+          this.dialog.open(CartDialogComponent, {
+            data: res
+          })
+        }
+      })
+    }
   }
 }
