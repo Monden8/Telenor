@@ -1,4 +1,4 @@
-const { lengthChecker } = require('../src/services/length_checker-service');
+const { lengthChecker } = require('../../src/services/length_checker-service');
 const chai = require('chai');
 const chaiAsPromised = require('chai-as-promised');
 

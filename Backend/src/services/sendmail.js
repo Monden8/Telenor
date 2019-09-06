@@ -12,8 +12,8 @@ function automaticmail(emailto) {
   const mailOptions = {
     from: 'hackathonfoxes@gmail.com',
     to: emailto,
-    subject: 'Welcome',
-    text: 'This is the most amazing webshop that has ever been made in the history of the universe.',
+    subject: 'Welcome to Telenor',
+    text: 'Greetings! Thank for joining us, we hope you find everything on the webshop you are looking for, and wish You a wonderful day! Kind regards, Telenor',
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
