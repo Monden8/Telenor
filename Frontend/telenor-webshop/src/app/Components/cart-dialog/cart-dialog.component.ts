@@ -17,6 +17,7 @@ export class CartDialogComponent implements OnInit {
   ) {
     dialogRef.disableClose = true;
     this.respon = data
+    // console.log(data)
   }
 
   ngOnInit() { }

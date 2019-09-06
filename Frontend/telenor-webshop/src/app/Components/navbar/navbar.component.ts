@@ -46,9 +46,8 @@ export class NavbarComponent implements OnInit {
             data: { message: 'Your cart is empty!' }
           })
         } else {
-          this.dialog.open(CartDialogComponent, {
-            data: res
-          })
+          // console.log(res)
+          this.dialog.open(CartDialogComponent, { data: res.cart })
         }
       })
     }

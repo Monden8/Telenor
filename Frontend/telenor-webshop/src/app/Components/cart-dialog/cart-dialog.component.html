@@ -1,5 +1,6 @@
 <div *ngFor="let respo of respon">
-  <p class="name">{{ respo.name }}</p>
+  <p class="name">{{ respo.brand }}</p>
+  <p class="serie">{{ respo.serie }}</p>
   <p class="cost">Cost: {{ respo.price }}</p>
 </div>
 <button mat-raised-button (click)="close()">Back</button>

@@ -20,11 +20,13 @@ export class ItemService {
   getItems(): any {
     return this.http.get<any>(`${environment.apiUrl}/main`, { headers: this.headers })
   }
-
-  addItem(id: string) {
-    return this.http.put<any>(`${environment.apiUrl}/addtocart`, id, { headers: this.headers }).pipe(
-      tap(res => {
-      }),
+  specifyItem(id: string): any {
+    return this.http.get<any>(`${environment.apiUrl}/main/${id}`, { headers: this.headers })
+  }
+  addItem(_id: string) {
+    let data = { id: _id }
+    return this.http.put<any>(`${environment.apiUrl}/addtocart`, data, { headers: this.headers }).pipe(
+      tap(res => { }),
       mapTo(true),
       catchError(error => {
         return of(false);

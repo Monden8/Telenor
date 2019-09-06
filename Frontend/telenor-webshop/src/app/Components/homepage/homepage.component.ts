@@ -3,7 +3,7 @@ import { AuthService } from 'src/app/Services/auth.service';
 import { ItemService } from 'src/app/Services/item.service';
 import { MatDialog } from '@angular/material';
 import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
-// import { DialogComponent } from '../dialog/dialog.component';
+import { DialogComponent } from '../dialog/dialog.component';
 
 
 @Component({
@@ -14,6 +14,7 @@ import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
 export class HomepageComponent implements OnInit {
   p: number = 1;
   collection: Array<any>;
+  array:Array<any>;
 
   constructor(private authsvc: AuthService, private item: ItemService, private dialog: MatDialog) { }
 
@@ -25,12 +26,23 @@ export class HomepageComponent implements OnInit {
       this.collection = res
     })
   }
+  scrollTop() {
+    window.scrollTo(0, 0);
+  }
+  specify(id) {
+    this.item.specifyItem(id).subscribe(res => {
+      this.array=[];
+      this.array.push(res);
+      this.collection = this.array;
+    })
+  }
   addToCart(id) {
     if (this.isLoggedIn()) {
       this.dialog.open(LoginDialogComponent, {});
       //   // this.dialog.open(DialogComponent, { data: { message: "Please login first !", next: "open" } })
     } else {
       this.item.addItem(id).subscribe(res => {
+        this.dialog.open(DialogComponent, { data: { message: "Successfully added!" } })
       })
     }
   }

@@ -2,16 +2,17 @@
   <div class="mainy">
     <img class="oneImg" src="../../../assets/logo.png" alt="" routerLink="/" />
     <div class="controlBar">
+      <!-- <div>
+        <button *ngIf="!isLoggedIn()">
+          <img src="../../../assets/heart.png" alt="" />
+          <h2 class="username">Welcome{{ username }}</h2>
+        </button>
+      </div> -->
       <div>
         <button class="loggedInPic" *ngIf="isLoggedIn()" (click)="openLogin()">
-          <img src="../../../assets/customer_ico.png" alt="" />
+          <img class="human" src="../../../assets/customer_ico.png" alt="" />
         </button>
       </div>
-      <div class="usernamePic" *ngIf="!isLoggedIn()">
-        <img src="../../../assets/heart.png" alt="" />
-        <!-- <h2 class="username">Welcome{{ username }}</h2> -->
-      </div>
-      ​
       <div>
         <button
           class="loggedOutPic"
@@ -19,7 +20,7 @@
           (click)="logout()"
           routerLink="/"
         >
-          <img src="../../../assets/customerin_ico.png" alt="" />
+          <img class="human" src="../../../assets/customerin_ico.png" alt="" />
         </button>
       </div>
       ​
